@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--(header-section)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>organic shop</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!--(css style sheet)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">  <!--(top-bar section)-->
+        <h2>Free shipping in Chennai. Order above RS.500</h2>
+    </div>
+    <div class="top-header">  <!--(top-header section)-->
+        <div class="left-icons">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="logo">
+            <img src="/static/images/images/rice.png">
+        </div>
+        <div class="right-icons">
+            <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <span id="cartCount">0</span>
+            </div>
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" placeholder="Search..."onkeyup="searchProducts()">
+            </div>
+        </div>
+    </div>
+          <div id="cartPanel" class="cart-panel"> <!--(Inside cart)-->
+              <div class="cart-header">
+              <h2>Your Cart</h2>
+              <i class="fas fa-times close-icon" onclick="toggleCart()"></i>
+              </div>
+              <div id="cartItems"></div>
+              <div class="cart-footer">
+                <h3 id="totalPrice">Total: ₹0</h3>
+                <div class="cart-buttons">
+                   <button id="buyAllBtn" onclick="buyAll()">🛒 Buy All </button>
+                </div>
+              </div>
+          </div>
+    <div class="banner">  <!--(banner image)-->
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Organic Vegetable Shop</h1>
+            <p>Fresh | Healthy | Natural</p>
+        </div>
+    </div>
+    <div class="shop"> <!--(various categories menu)-->
+        <h1>SHOP  BY  CATEGORIES</h1>
+    </div>
+    <section class="icon-category">  <!--each section-->
+        <div  class="icon">
+            <img src="/static/images/images/vegetable.png" width="120" onclick="showVeg()">
+            <p>Vegetables</p>
+        </div>
+        <div class="icon">
+            <img src="/static/images/images/fruits.png" width="120" onclick="showFruits()">
+            <p>Fruits</p>
+        </div>
+        <div class="icon">
+            <img src="/static/images/images/greens.png" width="120" onclick="showGreens()">
+            <p>Greens</p>
+        </div>
+        <div class="icon">
+            <img src="/static/images/proteins/egg.png" width="120" onclick="showProteins()">
+            <p>Proteins</p>
+        </div>
+        <div class="icon">
+            <img src="/static/images/images/rice.png" width="120" onclick="showRice()">
+            <p>Rice & Millets</p>
+        </div>
+        <div class="icon">
+            <img src="/static/images/ghee/ghee.png" width="120" onclick="showGhee()">
+            <p>Ghee</p>
+        </div>
+    </section>
+    <div id="products"></div> <!--(to show other all vegetables)-->
+    <section class="health-section"> <!--(health recommendations system)-->
+        <h2>Get Healthy Food Recommendation</h2>
+       <form id="healthForm">
+        <input type="number" id="age" placeholder="Enter Age" required>
+        <select id="condition">
+          <option value="">Select Health Condition</option>
+          <option value="Diabetes">Diabetes</option>
+          <option value="BP">Blood Pressure</option>
+          <option value="WeightLoss">Weight Loss</option>
+        </select>
+        <button type="submit">Get Recommendation</button>
+       </form>
+    </section>
+     <!--(to show categories)-->
+    <div id="recommendations"></div> 
+    <!--(to the AI bot assitance)-->
+    <div id="chat-circle" onclick="toggleChatWindow()">
+          🤖
+        <span id="chat-tooltip">I am here to help you!</span>
+    </div>
+    <div id="chat-container" style="display: none;">
+    <div id="chat-header">
+        <span>🥬 Organic Assistant</span>
+        <span onclick="toggleChatWindow()" style="cursor:pointer; font-size:16px; margin-left:auto;">×</span>
+    </div>
+    <div id="chat-box"></div>
+    <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask about items, delivery...">
+        <button id="send-btn">Send</button>
+    </div>
+    </div>
+ <!--(js code link)-->
+ <script src="/static/js/script.js"></script>
+</body>

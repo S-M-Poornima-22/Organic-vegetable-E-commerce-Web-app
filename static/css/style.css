@@ -1,0 +1,563 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body/* full page color*/
+{ 
+    background:linear-gradient(to bottom,#1b5e20,#66bb6a,#e8f5e9);
+    scroll-behavior: smooth;
+}
+.top-bar /*top-bar*/
+{
+    width:100%;
+    height:40px;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:14px;
+}
+.top-header /*logo-section*/
+{   
+    width:100%;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:7px 30px;
+    background:linear-gradient(to bottom,white,#e9e5e5,#f7efef);
+    border-bottom:1px solid #252525;
+    top:0;
+    position:sticky;
+}
+.left-icons,
+.right-icons /*icon sections*/
+{
+display:flex;
+gap:30px;
+}
+.left-icons i,
+.right-icons i
+{
+font-size:22px;
+color:rgb(4, 53, 10);
+cursor:pointer;
+}
+.logo img
+{
+    height:60px;
+}.search-box /*search bar*/
+{
+display:flex;
+align-items:center;
+background:white;
+padding:8px 15px;
+border-radius:25px;
+border:1px solid #ccc;
+gap:8px;
+}
+.search-box input{
+border:none;
+outline:none;
+font-size:14px;
+width:140px;
+}
+.search-box i{
+color:green;
+font-size:18px;
+}
+.cart-panel /*cart display logo*/
+{
+position:fixed;
+top:0;
+right:-350px;
+width:350px;
+height:100%;
+background:white;
+box-shadow:-2px 0 10px rgba(0,0,0,0.2);
+padding:20px;
+transition:0.4s;
+z-index:1000;
+overflow-y:auto;
+}
+.cart-panel.open
+{
+right:0;
+}
+#cartItems 
+p{
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+.cart-item /* Inside cart panel*/
+{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:10px;
+border-bottom:1px solid #ddd;
+padding:5px;
+}
+.cart-item img{
+border-radius:5px;
+}
+.qty-box{
+display:flex;
+align-items:center;
+gap:8px;
+}
+.qty-box button{
+padding:4px 10px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:4px;
+}
+.cart-icon{
+position:relative;
+font-size:28px;
+cursor:pointer;
+}
+#cartCount /* cart number count */
+{
+position:absolute;
+top:-8px;
+right:-10px;
+background:red;
+color:white;
+font-size:12px;
+padding:3px 7px;
+border-radius:50%;
+}
+::-webkit-scrollbar{
+width:6px;
+}
+::-webkit-scrollbar-thumb{
+background:green;
+border-radius:10px;
+min-height:30px;
+}
+.cart-header /* cart header section*/
+{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:15px;
+border-bottom:1px solid #ddd;
+}
+.cart-header h2{
+font-size:30px;
+}
+.close-icon{
+font-size:28px;
+cursor:pointer;
+}
+.cart-footer{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+padding:20px;
+border-top:1px solid #ddd;
+}
+.cart-buttons{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+#buyAllBtn{
+background:green;
+color:white;
+border:none;
+padding:12px;
+font-weight:bold;
+}
+#cartItems /* cart items space*/
+{
+margin-top:15px;
+height:calc(100vh - 260px);
+overflow-y:auto;
+padding-bottom:20px;
+}
+.cart-item{
+padding:15px 5px;
+}
+.qty-box button{
+width:35px;
+height:35px;
+font-size:18px;
+}
+.banner /* banner section*/
+{   
+position:relative;
+height:450px;
+background-image:url("/static/images/images/new-banner.png");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.overlay
+{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+.banner-text
+{
+position:relative;
+color:white;
+}
+.banner-text h1
+{
+font-size:50px;
+letter-spacing:15px;
+margin-bottom:60px;
+}
+.banner-text p
+{
+font-size:20px;
+letter-spacing:10px;
+}
+.shop /* shop by categories menu card*/
+{
+    color:black;
+    padding:30px 0 10px 0;
+    font-size:20px;
+    font-weight: bold;
+    text-align:center;
+    justify-content: center;
+}
+.icon-category{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    padding:20px;
+    text-align:center;
+}
+.icon img{
+    width:180px;
+    height:180px;
+    object-fit: contain;
+}
+.icon p{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+.icon:hover
+{
+    transform:scale(1.1);
+    transition:0.3s;
+}
+#products
+{
+   display:grid;
+   grid-template-columns: repeat(3,1fr);
+   gap:40px;
+   margin-top:30px;
+   padding:40px 60px;
+}
+.product{
+    border:1px solid black;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+    background: white;
+    box-shadow: 2px 6px 10px rgba(0,0,0,0.1);
+}
+.product img{
+    width:200px;
+    height:120px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+    transition: 0.3s;
+}
+.product
+{
+overflow:hidden;
+}
+.product h3{
+    margin: 10px;
+    font-size:18px;
+}
+.price
+{
+    color:green;
+    font-weight: bold;
+}
+.qty
+{
+    margin:10px 0;
+    padding:5px;
+}
+.button-group{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.add, .buy{
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.add{
+  background: rgb(20, 125, 20);
+  color: white;
+  border: none;
+}
+.buy{
+  background: white;
+  color: green;
+  border: 2px solid green;
+}
+select /*for the quantity option for vegetable*/
+{
+    width:80%;
+    padding:8px;
+    margin-top:10px;
+    font-size:15px;
+    border-radius:20px;
+    border:2px solid rgb(57, 184, 57);
+}
+.health-section /*health section*/
+{
+background:white;
+padding:30px;
+margin:40px;
+border-radius:10px;
+text-align:center;
+}
+.health-section input,
+.health-section select{
+width:200px;
+padding:8px;
+margin:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+button
+{
+    width:90%;
+    margin-top:10px;
+    border-radius:30px;
+    font-size:16px;
+}
+.health-section button{
+    width:90%;
+    margin-top:10px;
+    border-radius:30px;
+    font-size:16px;
+    background:#1b5e20;
+    color:white;
+    padding:10px 20px;
+    cursor:pointer;
+}
+#recommendations /*for the recommendations system*/
+{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+gap:30px;
+padding:30px;
+}
+.rec-card{
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.rec-card img{
+width:120px;
+height:120px;
+object-fit:contain;
+margin-bottom:10px;
+}
+.shop-btn{
+background:#2e7d32;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:20px;
+cursor:pointer;
+}
+.shop-btn:hover{
+background:#43a047;
+}
+#chat-container {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 260px;       
+    height: 340px;      
+    background-color: white;
+    border: 2px solid #1b5e20;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+    z-index: 999;
+    overflow: hidden;
+}
+#chat-header {
+    background: linear-gradient(to right, #1b5e20, #2e7d32);
+    color: white;
+    padding: 8px 12px;  
+    font-weight: bold;
+    font-size: 14px;    
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+#chat-box {
+    flex: 1;
+    padding: 10px;      
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #f4fbf4;
+}
+#chat-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 6px;       
+    background: white;
+    gap: 6px;
+}
+#user-input {
+    flex: 1;
+    padding: 6px 10px;  
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 12px;   
+}
+#send-btn {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    padding: 0 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;    
+    width: auto;
+    margin-top: 0;
+}
+#chat-circle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(to right, #1b5e20, #2e7d32);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.2s;
+}
+#chat-circle:hover {
+    transform: scale(1.1);
+}
+/* Tooltip tag line */
+#chat-tooltip {
+    position: absolute;
+    right: 65px;
+    background-color: #333;
+    color: white;
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+#chat-circle:hover #chat-tooltip {
+    opacity: 1;
+}
+
+/* Updated Compact Chat Box Container */
+#chat-container {
+    position: fixed;
+    bottom: 85px; /* Sits cleanly above the round robot button */
+    right: 20px;
+    width: 280px;
+    height: 360px;
+    background-color: white;
+    border: 2px solid #1b5e20;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+    z-index: 999;
+    overflow: hidden;
+}
+#chat-header {
+    background: linear-gradient(to right, #1b5e20, #2e7d32);
+    color: white;
+    padding: 10px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #f4fbf4;
+}
+#chat-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 6px;
+    background: white;
+    gap: 6px;
+}
+#user-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 12px;
+}
+#send-btn {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    padding: 0 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    width: auto;
+    margin-top: 0;
+}
+.message { padding: 8px 12px; border-radius: 15px; max-width: 80%; font-size: 13px; }
+.user { background-color: #c8e6c9; color: #1b5e20; align-self: flex-end; border-bottom-right-radius: 2px; }
+.bot { background-color: white; color: #333; border: 1px solid #e0e0e0; align-self: flex-start; border-bottom-left-radius: 2px; }
